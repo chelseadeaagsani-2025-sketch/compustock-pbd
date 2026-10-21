@@ -1,7 +1,8 @@
-# Konfigurasi khusus komputer lokal (jangan commit password MySQL)
+# Jangan unggah password database lokal
 /config.php
-# File editor / sistem
+
+# File editor dan sistem
 .vscode/
 .idea/
-Thumbs.db
 .DS_Store
+Thumbs.db

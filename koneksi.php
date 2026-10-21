@@ -1,9 +1,11 @@
 <?php
-// File koneksi MySQL untuk seluruh halaman CompuStock.
+
 $configFile = __DIR__ . '/config.php';
 if (!is_file($configFile)) {
-    die('Belum ada config.php. Salin config.example.php lalu beri nama config.php.');
+    http_response_code(500);
+    exit('File config.php belum ditemukan. Gunakan config.php lokal yang sebelumnya sudah berhasil.');
 }
+
 $config = require $configFile;
 
 try {
@@ -19,10 +21,7 @@ try {
         PDO::ATTR_EMULATE_PREPARES => false,
     ]);
 } catch (PDOException $e) {
+    error_log('CompuStock DB connection error: ' . $e->getMessage());
     http_response_code(500);
-    die('Error koneksi: ' . htmlspecialchars(
-        $e->getMessage(),
-        ENT_QUOTES,
-        'UTF-8'
-    ));
+    exit('Koneksi database gagal. Periksa MySQL dan pengaturan config.php lokal.');
 }
