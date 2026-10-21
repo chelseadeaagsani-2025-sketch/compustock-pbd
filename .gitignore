@@ -1,7 +1,7 @@
-# Jangan unggah password database lokal
+
 /config.php
 
-# File editor dan sistem
+
 .vscode/
 .idea/
 .DS_Store
