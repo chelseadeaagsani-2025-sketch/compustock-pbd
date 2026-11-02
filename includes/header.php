@@ -1,5 +1,5 @@
 <?php
-// Diperlukan: $pageTitle, $activePage, dan fungsi h().
+
 $navItems = [
     'satuan' => ['Data Satuan', '▣', 'satuan.php'],
     'barang' => ['Data Barang', '▤', 'barang.php'],
@@ -16,6 +16,7 @@ $navItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= h($pageTitle) ?> - CompuStock</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/addon.css">
 </head>
 <body>
 <div class="app">
@@ -27,6 +28,9 @@ $navItems = [
         <?php foreach ($navItems as $key => $item): ?>
         <a class="nav-item <?= $activePage === $key ? 'selected' : '' ?>" href="<?= h($item[2]) ?>"><span><?= h($item[1]) ?></span><?= h($item[0]) ?></a>
         <?php endforeach; ?>
+        <div class="nav-label spaced">SP, FUNCTION & TRIGGER</div>
+        <a class="nav-item <?= $activePage === 'routines' ? 'selected' : '' ?>" href="sp_function.php"><span>ƒ</span> SP &amp; Function</a>
+        <a class="nav-item <?= $activePage === 'stok' ? 'selected' : '' ?>" href="transaksi_stok.php"><span>↕</span> Trigger Kartu Stok</a>
         <div class="sidebar-bottom"><span class="connection-dot"></span> Database: pbd_uts</div>
     </aside>
     <main class="content">

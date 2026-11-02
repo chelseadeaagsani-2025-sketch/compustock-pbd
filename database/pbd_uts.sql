@@ -284,3 +284,4 @@ SELECT
     updated_at
 FROM margin_penjualan;
 SELECT * FROM v_margin_penjualan;
+
