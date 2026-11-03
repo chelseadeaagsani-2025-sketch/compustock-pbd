@@ -285,3 +285,5 @@ SELECT
 FROM margin_penjualan;
 SELECT * FROM v_margin_penjualan;
 
+
+

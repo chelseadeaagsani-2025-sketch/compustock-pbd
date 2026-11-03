@@ -1,5 +1,5 @@
 <?php
-// Diperlukan: $pageTitle, $activePage, $viewName, $columns, $rows, $error.
+
 ?>
 <div class="eyebrow">COMPUSTOCK / DATA MASTER</div>
 <h1><?= h($pageTitle) ?></h1>
